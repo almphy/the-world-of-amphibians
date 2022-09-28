@@ -1,0 +1,115 @@
+#-main
+{
+    margin: 40px auto 40px auto;
+    width: 900px;
+    height: 1068px;
+    box-shadow: 0 0 20px black;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+.-header
+{
+    position: absolute;
+    margin: -22px auto 0 auto;
+    background-image: url('../Assets/notepad_top.png');
+    width: 900px;
+    height: 70px;
+}
+.-content
+{
+    position: absolute;
+    margin: 48px auto 0 auto;
+    background-image: url('../Assets/paper_background.png');
+    width: 900px;
+    height: 1020px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+hr
+{
+    float: left;
+}
+#-specification
+{
+    float: right;
+    width: 40%;
+    height: 400px;
+}
+#-image
+{
+    float: left;
+    width: 60%;
+    height: 400px;
+}
+img
+{
+    text-align: center;
+    border: solid 5px black;
+    width: 96%;
+    height: auto;
+}
+p
+{
+    text-align: left;
+    font-size: 30px;
+    float: left;
+    margin: 10px 20px 0 0;
+}
+p[id="description"]
+{
+    text-align: center;
+    padding: 0 40px 0 40px;
+    font-size: 30px;
+    margin: 10px 20px 0 0;
+}
+h1
+{
+    color: #2DFF57;
+    padding: 0 30px 0 30px;
+    margin-bottom: -20px;
+    font-size: 50px;
+}
+h2
+{
+    color: white;
+    padding: 0 30px 0 30px;
+    font-size: 30px;
+}
+h1
+{
+    color: #2DFF57;
+    padding: 0 30px 0 30px;
+    font-size: 50px;
+}
+a
+{
+    color:#2DFF57;
+    text-decoration: none;   
+}
+a:visited
+{
+    color: #2DFF57;
+    text-decoration: none;
+}
+a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+#back
+{
+    left: 20px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url('../Assets/button.png');
+    height: 60px;
+    width: 18%;
+    border: solid 5px black;
+    font-family: cursive;
+    font-size: 30px;
+}
+#back:hover
+{
+    border-radius: 60px;
+    background-image: url('../Assets/button_sel.png');
+}

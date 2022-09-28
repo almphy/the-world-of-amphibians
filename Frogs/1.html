@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red-Eyed Tree Frog</title>
+    <link rel="stylesheet" href="../Code/frogs_index.css">
+    <link rel="stylesheet" href="../../Code/index.css">
+    <link href="../Assets/icon.png" rel="icon">
+</head>
+<body>
+    
+    <div id="-main">
+        <div class="-header"></div>
+        <div class="-content">
+            <input id="back" type="button" value="Back" onclick="window.location.href = '../frogs.html'";>
+            <h1 id="name"></h1>
+            <h2 id="scientific-name"></h2>
+    
+            <div id="-image">
+                <img src="../Assets/Frogs/red_eyed_tree_frog.png">
+            </div>
+            <div id="-specification">
+                <p id="place-of-origin">
+                </p>
+                <hr>
+                <p id="habitat">
+                </p>
+                <hr>
+                <p id="diet">
+                </p>
+                <hr>
+                <p id="life-span">
+                </p>
+            </div>
+
+            <p id="description"></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        const frog_id = 0;
+
+        let init =
+        {
+            method: 'GET',
+            headers:
+            {
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            cache: 'default'
+        };
+ 
+        let json_request = new Request("../Data/frogs.json", init);
+
+        fetch(json_request)
+            .then (function(resp)
+            {
+                return resp.json();
+            })
+            .then (function(frogs)
+            {
+                const food_items = frogs[frog_id]['diet'].length;
+
+                document.getElementById('name').innerHTML = frogs[frog_id]['name'];
+                document.getElementById('scientific-name').innerHTML = frogs[frog_id]['scientific-name'];
+                document.getElementById('place-of-origin').innerHTML = frogs[frog_id]['place-of-origin'];
+                document.getElementById('habitat').innerHTML = frogs[frog_id]['habitat'];
+
+                for (let i = 0; i < food_items; i++)
+                {
+                    if (i == 4)
+                    {
+                        document.getElementById('diet').innerHTML += frogs[frog_id]['diet'][i];
+                    }
+                    else
+                    {
+                        document.getElementById('diet').innerHTML += frogs[frog_id]['diet'][i] + ", <br>";
+                    }
+                }
+
+                document.getElementById('life-span').innerHTML = frogs[frog_id]['life-span'];
+                document.getElementById('description').innerHTML = frogs[frog_id]['description'];
+            });
+
+    </script>
+</body>
+</html>
